@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B5AFDF41D19842F00E461D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B5AFDF21D19842F00E461D7 /* Main.storyboard */; };
 		0B6733961D16B1010065A8BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6733951D16B1010065A8BE /* AppDelegate.swift */; };
 		0B6733981D16B1010065A8BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6733971D16B1010065A8BE /* ViewController.swift */; };
-		0B67339B1D16B1010065A8BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B6733991D16B1010065A8BE /* Main.storyboard */; };
 		0B67339D1D16B1010065A8BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B67339C1D16B1010065A8BE /* Assets.xcassets */; };
 		0B6733A01D16B1010065A8BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B67339E1D16B1010065A8BE /* LaunchScreen.storyboard */; };
 		0B6733AB1D16B1010065A8BE /* AlarmClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6733AA1D16B1010065A8BE /* AlarmClockTests.swift */; };
 		0B6733B61D16B1010065A8BE /* AlarmClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6733B51D16B1010065A8BE /* AlarmClockUITests.swift */; };
 		0B6733C41D16BAB90065A8BE /* Maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6733C31D16BAB90065A8BE /* Maze.swift */; };
-		0BD8CF101D19486A00A8F18E /* clap.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0BD8CF0F1D19486A00A8F18E /* clap.wav */; };
+		0BD8CF141D1953D800A8F18E /* bell.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0BD8CF131D1953D800A8F18E /* bell.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B5AFDF31D19842F00E461D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B6733921D16B1010065A8BE /* AlarmClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlarmClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B6733951D16B1010065A8BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B6733971D16B1010065A8BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0B67339A1D16B1010065A8BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B67339C1D16B1010065A8BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B67339F1D16B1010065A8BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B6733A11D16B1010065A8BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		0B6733B51D16B1010065A8BE /* AlarmClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmClockUITests.swift; sourceTree = "<group>"; };
 		0B6733B71D16B1010065A8BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B6733C31D16BAB90065A8BE /* Maze.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maze.swift; sourceTree = "<group>"; };
-		0BD8CF0F1D19486A00A8F18E /* clap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = clap.wav; path = ../clap.wav; sourceTree = "<group>"; };
+		0BD8CF131D1953D800A8F18E /* bell.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bell.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +101,14 @@
 		0B6733941D16B1010065A8BE /* AlarmClock */ = {
 			isa = PBXGroup;
 			children = (
+				0B5AFDF21D19842F00E461D7 /* Main.storyboard */,
+				0BD8CF131D1953D800A8F18E /* bell.mp4 */,
 				0B6733951D16B1010065A8BE /* AppDelegate.swift */,
 				0B6733971D16B1010065A8BE /* ViewController.swift */,
-				0B6733991D16B1010065A8BE /* Main.storyboard */,
 				0B67339C1D16B1010065A8BE /* Assets.xcassets */,
 				0B67339E1D16B1010065A8BE /* LaunchScreen.storyboard */,
 				0B6733A11D16B1010065A8BE /* Info.plist */,
 				0B6733C31D16BAB90065A8BE /* Maze.swift */,
-				0BD8CF0F1D19486A00A8F18E /* clap.wav */,
 			);
 			path = AlarmClock;
 			sourceTree = "<group>";
@@ -235,10 +235,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BD8CF101D19486A00A8F18E /* clap.wav in Resources */,
 				0B6733A01D16B1010065A8BE /* LaunchScreen.storyboard in Resources */,
 				0B67339D1D16B1010065A8BE /* Assets.xcassets in Resources */,
-				0B67339B1D16B1010065A8BE /* Main.storyboard in Resources */,
+				0BD8CF141D1953D800A8F18E /* bell.mp4 in Resources */,
+				0B5AFDF41D19842F00E461D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,10 +301,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0B6733991D16B1010065A8BE /* Main.storyboard */ = {
+		0B5AFDF21D19842F00E461D7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0B67339A1D16B1010065A8BE /* Base */,
+				0B5AFDF31D19842F00E461D7 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

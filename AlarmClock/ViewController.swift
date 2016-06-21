@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         myLabel.text = getNowTime()
         _ = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: "update", userInfo: nil, repeats: true)
         
-        let soundFilePath = NSBundle.mainBundle().pathForResource("clap", ofType: "wav")!
+        let soundFilePath = NSBundle.mainBundle().pathForResource("bell", ofType: "mp4")!
         let fileURL = NSURL(fileURLWithPath: soundFilePath)
         do{
             audioPlayer = try AVAudioPlayer(contentsOfURL: fileURL)
@@ -41,6 +41,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var myDPvar: UIDatePicker!
     @IBOutlet weak var myLabel: UILabel!
+    @IBOutlet var stop: UIButton!
     
     private var tempTime: String!
     private var setTime: String = "00:00"
@@ -102,7 +103,7 @@ class ViewController: UIViewController {
         }
         myAlert.addAction(myAction)
         presentViewController(myAlert, animated: true, completion: nil)
-    }
-    
+        
+    }    
     
 }
