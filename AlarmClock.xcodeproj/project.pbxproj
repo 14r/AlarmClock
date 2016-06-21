@@ -14,6 +14,8 @@
 		0B6733A01D16B1010065A8BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B67339E1D16B1010065A8BE /* LaunchScreen.storyboard */; };
 		0B6733AB1D16B1010065A8BE /* AlarmClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6733AA1D16B1010065A8BE /* AlarmClockTests.swift */; };
 		0B6733B61D16B1010065A8BE /* AlarmClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6733B51D16B1010065A8BE /* AlarmClockUITests.swift */; };
+		0B6733C41D16BAB90065A8BE /* Maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6733C31D16BAB90065A8BE /* Maze.swift */; };
+		0BD8CF101D19486A00A8F18E /* clap.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0BD8CF0F1D19486A00A8F18E /* clap.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		0B6733B11D16B1010065A8BE /* AlarmClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlarmClockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B6733B51D16B1010065A8BE /* AlarmClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmClockUITests.swift; sourceTree = "<group>"; };
 		0B6733B71D16B1010065A8BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B6733C31D16BAB90065A8BE /* Maze.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maze.swift; sourceTree = "<group>"; };
+		0BD8CF0F1D19486A00A8F18E /* clap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = clap.wav; path = ../clap.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				0B67339C1D16B1010065A8BE /* Assets.xcassets */,
 				0B67339E1D16B1010065A8BE /* LaunchScreen.storyboard */,
 				0B6733A11D16B1010065A8BE /* Info.plist */,
+				0B6733C31D16BAB90065A8BE /* Maze.swift */,
+				0BD8CF0F1D19486A00A8F18E /* clap.wav */,
 			);
 			path = AlarmClock;
 			sourceTree = "<group>";
@@ -229,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BD8CF101D19486A00A8F18E /* clap.wav in Resources */,
 				0B6733A01D16B1010065A8BE /* LaunchScreen.storyboard in Resources */,
 				0B67339D1D16B1010065A8BE /* Assets.xcassets in Resources */,
 				0B67339B1D16B1010065A8BE /* Main.storyboard in Resources */,
@@ -258,6 +265,7 @@
 			files = (
 				0B6733981D16B1010065A8BE /* ViewController.swift in Sources */,
 				0B6733961D16B1010065A8BE /* AppDelegate.swift in Sources */,
+				0B6733C41D16BAB90065A8BE /* Maze.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +490,7 @@
 				0B6733BC1D16B1010065A8BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B6733BD1D16B1010065A8BE /* Build configuration list for PBXNativeTarget "AlarmClockTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +499,7 @@
 				0B6733BF1D16B1010065A8BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B6733C01D16B1010065A8BE /* Build configuration list for PBXNativeTarget "AlarmClockUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +508,7 @@
 				0B6733C21D16B1010065A8BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
