@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreMotion
+import AVFoundation
 
 class Maze: UIViewController {
     
@@ -15,6 +16,9 @@ class Maze: UIViewController {
     var playerMotionManager: CMMotionManager!
     var speedX: Double = 0.0
     var speedY: Double = 0.0
+    
+    var audioPlayer: AVAudioPlayer!
+    var soundCount: Int = 0
     
     let screenSize = UIScreen.mainScreen().bounds.size
     let maze = [
@@ -65,6 +69,7 @@ class Maze: UIViewController {
                     break
                 }
             }
+            
         }
         
         playerView = UIView(frame: CGRectMake(0, 0, screenSize.width / 60, screenSize.height / 60))
@@ -76,6 +81,20 @@ class Maze: UIViewController {
         playerMotionManager.accelerometerUpdateInterval = 0.02
         
         self.startAccelerometer()
+        
+        let soundFilePath = NSBundle.mainBundle().pathForResource("bell", ofType: "mp4")!
+        let fileURL = NSURL(fileURLWithPath: soundFilePath)
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOfURL: fileURL)
+        }catch{
+            print("音楽ファイルが読み込めませんでした")
+        }
+        
+        audioPlayer.numberOfLoops = soundCount
+        audioPlayer.play()
+        
+
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -132,6 +151,9 @@ class Maze: UIViewController {
             
             if (CGRectIntersectsRect(self.goalView.frame, self.playerView.frame)){
                 self.gameChek("Clear!", message: "クリアしました！")
+                self.audioPlayer.numberOfLoops = self.soundCount
+                self.audioPlayer.stop()
+
                 return
             }
             
