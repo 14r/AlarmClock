@@ -22,7 +22,7 @@ class Maze: UIViewController {
     
     let screenSize = UIScreen.mainScreen().bounds.size
     let maze = [
-        [1, 0, 0, 0, 1, 0],
+        [0, 0, 0, 0, 0, 0],
         [1, 0, 1, 0, 1, 0],
         [3, 0, 1, 0, 1, 0],
         [1, 1, 1, 0, 0, 0],
@@ -155,6 +155,8 @@ class Maze: UIViewController {
                 self.audioPlayer.stop()
 
                 return
+                
+                
             }
             
             self.playerView.center = CGPointMake(posX, posY)

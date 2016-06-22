@@ -70,6 +70,20 @@
                     <view key="view" contentMode="scaleToFill" id="4NP-Ee-uDf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5p5-f8-QCb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="lcx-bn-sIi">
+                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="VnI-Dn-m44">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="FVo-M8-XkB"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="3sL-oZ-fCl"/>
