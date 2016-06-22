@@ -18,7 +18,7 @@ class Maze: UIViewController {
     var speedY: Double = 0.0
     
     var audioPlayer: AVAudioPlayer!
-    var soundCount: Int = 0
+    var soundCount: Int =  -1
     
     let screenSize = UIScreen.mainScreen().bounds.size
     let maze = [
