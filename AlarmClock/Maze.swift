@@ -12,6 +12,8 @@ import AVFoundation
 
 class Maze: UIViewController {
     
+    @IBOutlet var navBar: UINavigationBar!
+    let statusBarHeight: CGFloat = UIApplication.sharedApplication().statusBarFrame.height
     var playerView: UIView!
     var playerMotionManager: CMMotionManager!
     var speedX: Double = 0.0
@@ -21,18 +23,33 @@ class Maze: UIViewController {
     var soundCount: Int =  -1
     
     let screenSize = UIScreen.mainScreen().bounds.size
+//    
+//    let maze = [
+//        [1, 0, 0, 0, 1, 0],
+//        [1, 0, 1, 0, 1, 0],
+//        [3, 0, 1, 0, 1, 0],
+//        [1, 1, 1, 0, 0, 0],
+//        [1, 0, 0, 1, 1, 0],
+//        [0, 0, 1, 0, 0, 0],
+//        [0, 1, 1, 0, 1, 0],
+//        [0, 0, 0, 0, 1, 0],
+//        [0, 1, 1, 0, 0, 0],
+//        [0, 0, 1, 1, 1, 2],
+//        ]
+    
     let maze = [
-        [0, 0, 0, 0, 0, 0],
-        [1, 0, 1, 0, 1, 0],
-        [3, 0, 1, 0, 1, 0],
+        [1, 0, 0, 0, 0, 0],
+        [1, 0, 1, 0, 0, 0],
+        [3, 0, 1, 0, 0, 0],
         [1, 1, 1, 0, 0, 0],
-        [1, 0, 0, 1, 1, 0],
+        [1, 0, 0, 1, 0, 0],
         [0, 0, 1, 0, 0, 0],
-        [0, 1, 1, 0, 1, 0],
-        [0, 0, 0, 0, 1, 1],
+        [0, 1, 1, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
         [0, 1, 1, 0, 0, 0],
         [0, 0, 1, 1, 1, 2],
         ]
+
     
     var goalView: UIView!
     var startView: UIView!
@@ -44,7 +61,7 @@ class Maze: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         let cellWidth = screenSize.width / CGFloat(maze[0].count)
-        let cellHeight = screenSize.height / CGFloat(maze.count)
+        let cellHeight = (screenSize.height - statusBarHeight) / CGFloat(maze.count)
         
         let cellOffsetX = screenSize.width / CGFloat(maze[0].count * 2)
         let cellOffsetY = screenSize.height / CGFloat(maze.count * 2)
@@ -72,7 +89,7 @@ class Maze: UIViewController {
             
         }
         
-        playerView = UIView(frame: CGRectMake(0, 0, screenSize.width / 60, screenSize.height / 60))
+        playerView = UIView(frame: CGRectMake(0, 0, screenSize.width / 60, (screenSize.height - statusBarHeight) / 60))
         playerView.center = startView.center
         playerView.backgroundColor = UIColor.grayColor()
         self.view.addSubview(playerView)
@@ -108,7 +125,7 @@ class Maze: UIViewController {
             let view = UIView(frame: rect)
             
             let center = CGPoint(x: offsetX + width * CGFloat(x),
-                                 y: offsetY + height * CGFloat(y)
+                                 y: offsetY + height * CGFloat(y) + statusBarHeight
             )
             
             view.center = center
@@ -144,13 +161,14 @@ class Maze: UIViewController {
             
             for wallRect in self.wallRectArray{
                 if (CGRectIntersectsRect(wallRect, self.playerView.frame)){
-                    self.gameChek("Game Over", message: "壁に当たりました。")
+                    self.gameRetry("Game Over", message: "壁に当たりました。")
                     return
                 }
             }
             
             if (CGRectIntersectsRect(self.goalView.frame, self.playerView.frame)){
-                self.gameChek("Clear!", message: "クリアしました！")
+                self.gameCheck("Clear!", message: "クリアしました！")
+                
                 self.audioPlayer.numberOfLoops = self.soundCount
                 self.audioPlayer.stop()
 
@@ -166,7 +184,25 @@ class Maze: UIViewController {
         
     }
     
-    func gameChek(result: String, message: String){
+    func gameRetry(result: String, message: String){
+        
+        if playerMotionManager.accelerometerActive{
+            playerMotionManager.stopAccelerometerUpdates()
+        }
+        
+        let gameRetryAlert: UIAlertController = UIAlertController(title: result, message: message, preferredStyle: .Alert)
+        
+        let retryAction = UIAlertAction(title: "もう一度", style: .Default){action in
+            self.retry()
+        }
+        
+        gameRetryAlert.addAction(retryAction)
+        
+        self.presentViewController(gameRetryAlert, animated: true, completion: nil)
+    }
+    
+    
+    func gameCheck(result: String, message: String){
         
         if playerMotionManager.accelerometerActive{
             playerMotionManager.stopAccelerometerUpdates()
@@ -174,14 +210,15 @@ class Maze: UIViewController {
         
         let gameCheckAlert: UIAlertController = UIAlertController(title: result, message: message, preferredStyle: .Alert)
         
-        let retryAction = UIAlertAction(title: "もう一度", style: .Default){action in
-            self.retry()
+        let retryAction = UIAlertAction(title: "おはようございます", style: .Default){action in
+            self.back()
         }
         
         gameCheckAlert.addAction(retryAction)
         
         self.presentViewController(gameCheckAlert, animated: true, completion: nil)
     }
+
     
     func retry(){
         
@@ -196,6 +233,9 @@ class Maze: UIViewController {
         
     }
     
+    func back(){
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
 }
 
